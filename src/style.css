@@ -1,0 +1,149 @@
+/*VISTA DESKTOP*/
+body {
+    padding: 0;
+    margin: 0;
+    background:#FEE440;
+    font-family:'Red Hat Mono';
+    color: #FF865E;
+    font-weight: bold;
+    align-items: center;
+    }
+
+
+
+#logo{
+    position: flex;
+    top: 0%;
+    padding-left: 35%;
+    width: 450px;
+    justify-content: center;
+}
+
+/*Código de las tarjetas*/
+
+/*.fatherPokeCards{
+    /*display: flex;
+    justify-content: center;
+    border: 12px solid black;
+}*/
+
+.pokeCards{  
+/*El lugar donde los voy a poner*/
+display: flex; 
+flex-wrap: wrap;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.container{
+padding: 0;
+margin:17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Frente de la tarjeta*/
+
+#pokebola{ 
+position: absolute;
+width: 100px;
+height: 100px; 
+    } 
+
+.frontCard{  
+        display: flex;
+        justify-content: center;
+        align-items: center;                  
+        width: 150px;
+        height: 150px;
+        border-radius: 20px;
+        background-color:#FF865E;
+        border: 12px solid white;
+        cursor: pointer;
+    }
+
+/*Reverso de la tarjeta: donde va el personaje*/
+    .backCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 20px;
+        background-color: #FEF9EF;
+        border: 12px solid #FF865E;
+        cursor: pointer;
+        display:none;
+        }
+
+h3{
+    display: none;
+}
+
+
+
+
+
+/*PIE DEL PROYECTO*//*Footer*/
+ #pie{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 17%;
+    font-size: 20px;
+    width: 100%;
+    height: 7%;
+    padding: 0;
+    
+}
+
+#firma{
+    position: relative;
+    bottom: 1px;
+    left: 20%;
+}
+
+a{
+    text-decoration: none;
+    color: #FF865E;
+}
+
+
+.github{
+    width: 20px;
+    height: 20px;
+    padding: 22px;
+}
+.git{
+    padding: 2px;
+    display: flex;
+    margin: 5px;
+    margin-left: 15px;
+    position: relative;
+    bottom: 9px;
+    left: 20%;
+}
+
+/*.boton{
+    background:#FEE440;
+    position: flex;
+    top: 490px;
+    left: 550px;
+    box-shadow: 2px 2px 2px 2px rgba(240, 239, 239, 0.2);
+    font-size: 27px;
+    font-family: 'Red Hat Mono', monospace;
+    font-weight: bold;
+    width: 17%;
+    height: 9%; 
+    border-radius: 30px;
+    border: solid;
+    border-color: #FF865E;
+    }*/

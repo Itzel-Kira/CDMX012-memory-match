@@ -1,5 +1,5 @@
-/*import pokemon from '../data/pokemon/pokemon.js';
-console.log(pokemon);*/
+import pokemon from '../data/pokemon/pokemon.js';
+//console.log(pokemon);
 
 const App = () => {
   const el = document.createElement('div');
@@ -9,6 +9,8 @@ const App = () => {
 
   return el;
 };
+
+
 
 
 
