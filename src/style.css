@@ -9,8 +9,6 @@ body {
     align-items: center;
     }
 
-
-
 #logo{
     position: flex;
     top: 0%;
@@ -33,37 +31,29 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
 align-items: center;
+margin-top: 35px;
 }
 
-.container{
+.cardsContainer{
 padding: 0;
 margin:17px;
 }
-
-
-
-
-
-
-
-
-
 
 
 /*Frente de la tarjeta*/
 
 #pokebola{ 
 position: absolute;
-width: 100px;
-height: 100px; 
+width: 80px;
+height: 80px; 
     } 
 
 .frontCard{  
         display: flex;
         justify-content: center;
         align-items: center;                  
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 20px;
         background-color:#FF865E;
         border: 12px solid white;
@@ -75,13 +65,13 @@ height: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 20px;
         background-color: #FEF9EF;
         border: 12px solid #FF865E;
         cursor: pointer;
-        display:none;
+        /*display:none;*/
         }
 
 h3{
@@ -90,6 +80,20 @@ h3{
 
 
 
+
+
+
+
+.score-flips{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    font-size:25px;
+
+
+    }
 
 
 /*PIE DEL PROYECTO*//*Footer*/
@@ -132,13 +136,19 @@ a{
     left: 20%;
 }
 
-/*.boton{
-    background:#FEE440;
+.reloadButton{
+display: flex; 
+flex-wrap: wrap;
+padding-left: 45%;
+padding-top: 0;
+}
+
+#resetGame{
+    background: #FEF9EF;
     position: flex;
-    top: 490px;
-    left: 550px;
+    top: 0px;
     box-shadow: 2px 2px 2px 2px rgba(240, 239, 239, 0.2);
-    font-size: 27px;
+    font-size: 20px;
     font-family: 'Red Hat Mono', monospace;
     font-weight: bold;
     width: 17%;
@@ -146,4 +156,7 @@ a{
     border-radius: 30px;
     border: solid;
     border-color: #FF865E;
-    }*/
+    cursor: pointer;
+    align-items: center;
+    }
+

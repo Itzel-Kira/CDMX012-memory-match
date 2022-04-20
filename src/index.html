@@ -6,7 +6,7 @@
 
     <title>Memory Match!</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="phonerd.css" />
+    <!--<link rel="stylesheet" href="phonerd.css" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="stylesheet"
@@ -23,22 +23,33 @@
     </header>
 
 
-
+<main>
 
 <!-- Esta es la seccion más importante -->
-<!--<section class="fatherPokeCards"> -->
+<section class="fatherPokeCards">
     <div class="pokeCards" id="pokeCards"></div>
+</section>
+
+<!--Sección de los puntajes-->
+<section class="fatherScore-Flips">
+ <div class="score-flips">
+ <h2 id="score" class="statistics">Aciertos: 0</h2>
+ <h2 id="flips" class="statistics">Movimientos: 0</h2>
+ </div>
+</section>
   
 
+<!--Botón "Jugar otra vez"-->
+<section class="relButton">
+  <div class="reloadButton">
+<button id="resetGame" onclick="location.href = location.href">Jugar otra vez</button>
+</div>
+</section>
+
+</main>
 
 
-
-
-
-  <!--  <div id="root"></div> -->
-
-<!--<a href = "game.html"><button class="boton" id = "jugar">¡A jugar!</button></a>-->
-
+<footer>
     <section id="pie">
       <p id="firma">Minijuego hecho por:</p>
       <div class="git">
@@ -46,13 +57,16 @@
           ><img src="pokemonimg/github.png" alt="github" class="github"
         /></a>
         <a href="https://github.com/Itzel-Kira" target="_blank"
-          ><p>Itzel Rovira Álvarez</p></a
-        >
+          ><p>Itzel Rovira Álvarez</p></a>
       </div>
     </section>
+  </footer>
+
+<div id="root"></div> 
 
     <script src="main.js" type="module"></script>
   </body>
+
 </html>
 
 
