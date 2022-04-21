@@ -56,7 +56,7 @@ let flipped = 0;
 
 let flips = document.getElementById("flips");
 let showScore = document.getElementById("score");
-const selCards = document.getElementsByClassName("cardsP");
+let selCards = document.getElementsByClassName("cardsP");
 
 for (const card of selCards) {
   card.addEventListener("click", function () {
@@ -65,7 +65,7 @@ for (const card of selCards) {
       card.classList.toggle("is-flipped");
       pokemonId1 = document.getElementById(card.firstElementChild.id);
       cardId1 = card.firstElementChild.innerText;
-      cardId1.disabled = true;
+      pokemonId1.disabled = true;
     } else {
       if (countCards == 2) {
         card.classList.toggle("is-flipped");

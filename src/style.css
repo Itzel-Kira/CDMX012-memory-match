@@ -19,19 +19,21 @@ body {
 
 /*Código de las tarjetas*/
 
-/*.fatherPokeCards{
-    /*display: flex;
+.fatherPokeCards{
+    display: flex;
     justify-content: center;
-    border: 12px solid black;
-}*/
+    }
 
 .pokeCards{  
 /*El lugar donde los voy a poner*/
 display: flex; 
 flex-wrap: wrap;
 justify-content: space-evenly;
-align-items: center;
+justify-content: center;
 margin-top: 35px;
+position: relative;
+transition: transform 1s;
+transform-style: preserve-3d;
 }
 
 .cardsContainer{
@@ -40,7 +42,10 @@ margin:17px;
 }
 
 
+
+
 /*Frente de la tarjeta*/
+
 
 #pokebola{ 
 position: absolute;
@@ -50,6 +55,7 @@ height: 80px;
 
 .frontCard{  
         display: flex;
+        position:absolute;
         justify-content: center;
         align-items: center;                  
         width: 100px;
