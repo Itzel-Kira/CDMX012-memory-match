@@ -1,4 +1,8 @@
-/*VISTA DESKTOP*/
+*{
+    transition: all 0.8s; 
+  }
+
+
 body {
     padding: 0;
     margin: 0;
@@ -30,7 +34,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
 justify-content: center;
-margin-top: 35px;
+margin-top: 25px;
 position: relative;
 transition: transform 1s;
 transform-style: preserve-3d;
@@ -53,13 +57,22 @@ width: 80px;
 height: 80px; 
     } 
 
+/*.face {
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            overflow: hidden;
+          }
+*/
+
+
 .frontCard{  
         display: flex;
         position:absolute;
         justify-content: center;
         align-items: center;                  
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         border-radius: 20px;
         background-color:#FF865E;
         border: 12px solid white;
@@ -67,28 +80,29 @@ height: 80px;
     }
 
 /*Reverso de la tarjeta: donde va el personaje*/
-    .backCard{
+.backCard{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         border-radius: 20px;
         background-color: #FEF9EF;
         border: 12px solid #FF865E;
         cursor: pointer;
-        /*display:none;*/
+        /*transform: rotateY(180deg);*/
         }
 
-/* #pokeName4{
-    display: none;
-} */
 
 
 
+        .cardsContainer.is-flipped {
+            transform: rotateY(180deg);
+          
+          }
 
 
-
+          
 
 .score-flips{
     display: flex; 
@@ -140,6 +154,18 @@ a{
     position: relative;
     bottom: 9px;
     left: 20%;
+}
+
+.score-flips-ng{
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: center;
+    align-items: flex-end;
+    justify-content: space-around;
+
+
 }
 
 .reloadButton{
