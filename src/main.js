@@ -1,13 +1,23 @@
-import App from "./components/App.js";
+//import App from "./components/App.js";
 import pokemon from "./data/pokemon/pokemon.js";
 //document.getElementById("root").appendChild(App());
 
-const pokemon1 = pokemon.items;
-//console.log(pokemon1); //es la primera copia de mi arreglo
-const pokemon2 = pokemon.items;
-//console.log(pokemon2); //es la segunda copia de mi arreglo
-let pokemon3 = pokemon1.concat(pokemon2);
-//console.log(pokemon3); //pokemon3 es mi arreglo "duplicado" y unido pero no mezclado
+let countCards = 0;
+let pokemonId1 = null;
+let pokemonId2 = null;
+let cardId1 = null;
+let cardId2 = null;
+
+let score = 0;
+let flipped = 0;
+let flips = document.getElementById("flips");
+let showScore = document.getElementById("score");
+let tempo = false;
+
+
+const pokemon1 = pokemon.items; //console.log(pokemon1); //es la primera copia de mi arreglo
+const pokemon2 = pokemon.items; //console.log(pokemon2); //es la segunda copia de mi arreglo
+const pokemon3 = pokemon1.concat(pokemon2); //console.log(pokemon3); //pokemon3 es mi arreglo "duplicado" y unido pero no mezclado
 
 //Algoritmo Fisher-Yates: para mezclar los elementos del arreglo
 function mixCards(pokemonX) {
@@ -42,23 +52,12 @@ for (let index = 0; index < 18; index++) {
 }
 
 //Variables de las tarjetas al momento de hacer click
-let countCards = 0;
-let pokemonId1 = null;
-let pokemonId2 = null;
-let cardId1 = null;
-let cardId2 = null;
-
-let score = 0;
-let flipped = 0;
-let flips = document.getElementById("flips");
-let showScore = document.getElementById("score");
-let tempo = false;
 
 const selCards = document.getElementsByClassName("cardsContainer");
 
-let timer = 90;
+let timer = 70;
 let countdownTime = null;
-let initialTime= 90;
+let initialTime= 70;
 let time = document.getElementById("time");
 
 export function countingTime(){
@@ -69,7 +68,7 @@ export function countingTime(){
     clearInterval(countdownTime);
     targetBlock()
   }
-  },1000)
+  },2000)
 }
 
 export function targetBlock(){
@@ -96,12 +95,11 @@ for (const card of selCards) {
     
   
   } else {
-  if (countCards==2){
+  if (countCards ==2){
     card.classList.toggle("is-flipped");
     pokemonId2 = card;
     cardId2= card.innerText;
     //console.log({cardId2})
-    
   flipped++;
   flips.innerHTML=  `Movimientos: ${flipped} `;
 
@@ -123,8 +121,6 @@ for (const card of selCards) {
     setTimeout(() => { pokemonId1.classList.toggle("is-flipped"), 
         pokemonId2.classList.toggle("is-flipped");}, 1300);
         countCards = 0;   
-
-    
       }
     }
   } 

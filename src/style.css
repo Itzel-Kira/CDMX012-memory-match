@@ -1,9 +1,11 @@
-*{
+.cardP{
     transition: all 0.8s; 
-  }
-
+}
 
 body {
+    /*-webkit-perspective: 1000;*/
+    /*--w: calc(70vw / 6);
+    --h: calc(70vh / 3);*/
     padding: 0;
     margin: 0;
     background:#FEE440;
@@ -22,19 +24,27 @@ body {
 }
 
 /*Código de las tarjetas*/
-
 .fatherPokeCards{
     display: flex;
     justify-content: center;
     }
 
-.pokeCards{  
+.cardP{
+cursor: pointer;
+width: var(--w);
+height: var(--h);
+position: relative;
+perspective: 1000px;
+animation: iniciar 5s;
+}
+
 /*El lugar donde los voy a poner*/
+.pokeCards{  
 display: flex; 
 flex-wrap: wrap;
 justify-content: space-evenly;
 justify-content: center;
-margin-top: 25px;
+margin-top: 35px;
 position: relative;
 transition: transform 1s;
 transform-style: preserve-3d;
@@ -43,28 +53,19 @@ transform-style: preserve-3d;
 .cardsContainer{
 padding: 0;
 margin:17px;
+animation: iniciar 5s;
+cursor: pointer;
+min-width: 100px;
+transform-style: preserve-3d;
+transition: all 1s linear;
 }
 
-
-
-
 /*Frente de la tarjeta*/
-
-
 #pokebola{ 
 position: absolute;
 width: 80px;
 height: 80px; 
     } 
-
-/*.face {
-            position: absolute;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            overflow: hidden;
-          }
-*/
-
 
 .frontCard{  
         display: flex;
@@ -80,7 +81,7 @@ height: 80px;
     }
 
 /*Reverso de la tarjeta: donde va el personaje*/
-.backCard{
+.face.backCard{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -90,37 +91,58 @@ height: 80px;
         background-color: #FEF9EF;
         border: 12px solid #FF865E;
         cursor: pointer;
-        /*transform: rotateY(180deg);*/
+        transform: rotateY(180deg);
+        cursor: pointer;
+        backface-visibility: hidden;
         }
 
+.cardsContainer.is-flipped {
+    transform: rotateY(180deg);
+        }
 
-
-
-        .cardsContainer.is-flipped {
-            transform: rotateY(180deg);
-          
-          }
-
-
-          
-
-.score-flips{
-    display: flex; 
+/*Sección de los puntajes*/
+.score-flips-ng{
+    text-align: center;
+    display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    position: center;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+#resetGame{
+    background: #FEF9EF;
+    position: flex;
+    top: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(240, 239, 239, 0.2);
+    font-size: 20px;
+    font-family: 'Red Hat Mono', monospace;
     font-weight: bold;
-    font-size:25px;
-
-
+    width: 17%;
+    height: 9%; 
+    border-radius: 30px;
+    border: solid;
+    border-color: #FF865E;
+    cursor: pointer;
+    align-items: center;
     }
 
+#resetGame:hover{
+    background-color: cyan;
+    position: flex;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    width: 17%;
+    height: 9%;
+    align-items: center;
+}
 
 /*PIE DEL PROYECTO*//*Footer*/
- #pie{
+#pie{
     display: flex;
     position: fixed;
-    bottom: 0;
     left: 17%;
     font-size: 20px;
     width: 100%;
@@ -140,7 +162,6 @@ a{
     color: #FF865E;
 }
 
-
 .github{
     width: 20px;
     height: 20px;
@@ -155,40 +176,4 @@ a{
     bottom: 9px;
     left: 20%;
 }
-
-.score-flips-ng{
-    text-align: center;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: center;
-    align-items: flex-end;
-    justify-content: space-around;
-
-
-}
-
-.reloadButton{
-display: flex; 
-flex-wrap: wrap;
-padding-left: 45%;
-padding-top: 0;
-}
-
-#resetGame{
-    background: #FEF9EF;
-    position: flex;
-    top: 0px;
-    box-shadow: 2px 2px 2px 2px rgba(240, 239, 239, 0.2);
-    font-size: 20px;
-    font-family: 'Red Hat Mono', monospace;
-    font-weight: bold;
-    width: 17%;
-    height: 9%; 
-    border-radius: 30px;
-    border: solid;
-    border-color: #FF865E;
-    cursor: pointer;
-    align-items: center;
-    }
 
