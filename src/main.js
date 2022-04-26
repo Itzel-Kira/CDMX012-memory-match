@@ -8,12 +8,11 @@ let pokemonId2 = null;
 let cardId1 = null;
 let cardId2 = null;
 
-let score = 0;
 let flipped = 0;
+let score = 0;
 let flips = document.getElementById("flips");
 let showScore = document.getElementById("score");
 let tempo = false;
-
 
 const pokemon1 = pokemon.items; //console.log(pokemon1); //es la primera copia de mi arreglo
 const pokemon2 = pokemon.items; //console.log(pokemon2); //es la segunda copia de mi arreglo
@@ -30,7 +29,7 @@ function mixCards(pokemonX) {
 mixCards(pokemon3);
 
 //Pasemos las imágenes al DOM (sólo las imágenes)
-let random = "";
+export let random = "";
 for (let index = 0; index < 18; index++) {
   const print = document.getElementById("pokeCards");
   random += `
@@ -41,17 +40,13 @@ for (let index = 0; index < 18; index++) {
         </div>
 
         <div id="${index}" class="face backCard">
-                        <img id="pokeName${index}" src="${
-    pokemon3[index].image
-  }" alt="${pokemon3[index].id}" />
-        </div>
+              <img src="${pokemon3[index].image}"> <h3> ${pokemon3[index].id} </h3> 
+          </div>
 </div>
 </div>
 `;
   print.innerHTML = random;
 }
-
-//Variables de las tarjetas al momento de hacer click
 
 const selCards = document.getElementsByClassName("cardsContainer");
 
@@ -68,7 +63,7 @@ export function countingTime(){
     clearInterval(countdownTime);
     targetBlock()
   }
-  },2000)
+  },1000)
 }
 
 export function targetBlock(){
@@ -87,11 +82,11 @@ for (const card of selCards) {
     }
 
   countCards++;
-    if (countCards ==1){ //== igualdad
+    if (countCards ==1){ 
     card.classList.toggle("is-flipped");
-    pokemonId1 = card; //firstElementChild: viene toda la información almacenada
+    pokemonId1 = card; 
     cardId1= card.innerText;
-    //console.log({cardId1})
+    
     
   
   } else {
@@ -103,14 +98,16 @@ for (const card of selCards) {
   flipped++;
   flips.innerHTML=  `Movimientos: ${flipped} `;
 
+  
+  
   if (cardId1===cardId2){
     countCards = 0; 
     score++;
     showScore.innerHTML=  `Aciertos: ${score} `;
-
+    
     if (score==9) {
       clearInterval(initialTime)
-      showScore.innerHTML=  `Aciertos: ${score}`;
+      showScore.innerHTML= `Aciertos: ${score}`;
       time.innerHTML = `¡Muy bien! Lo hiciste en: ${initialTime-timer} segundos✨`
       flips.innerHTML=  `Movimientos: ${flipped} `;
 
@@ -127,6 +124,11 @@ for (const card of selCards) {
 }
 )}
 
+/*<div id="${index}" class="face backCard">
+                        <img id="pokemon3${index}" src="${
+    pokemon3[index].image
+  }" alt="${pokemon3[index].id}" />
+        </div>*/
 
 
 
@@ -142,59 +144,3 @@ for (const card of selCards) {
 
 
 
-
-
-
-
-/*
-
-
-for (const card of selCards) {
-  card.addEventListener("click", function () {
-    countCards++;
-    if (countCards == 1) {
-      card.classList.toggle("is-flipped");
-      pokemonId1 = document.getElementById(card.firstElementChild.id);
-      cardId1 = card.firstElementChild.innerText;
-      pokemonId1.disabled = true;
-    } else {
-      if (countCards == 2) {
-        card.classList.toggle("is-flipped");
-        pokemonId2 = document.getElementById(card.firstElementChild.id);
-        cardId2 = card.firstElementChild.innerText;
-        pokemonId2.disabled = true;
-        flipped++;
-        flips.innerHTML = `Movimientos: ${flipped}`;
-
-        if (cardId1 === cardId2) {
-          countCards = 0;
-
-          score++;
-          showScore.innerHTML = `Aciertos: ${score}`;
-        } else {
-          setTimeout(() => {
-            pokemonId1.parentNode.classList.remove("is-flipped");
-            pokemonId2.parentNode.classList.remove("is-flipped");
-          }, 1000);
-
-          pokemonId1.disabled = false;
-          pokemonId2.disabled = false;
-          eventFire(pokemonId1, "click");
-          eventFire(pokemonId2, "click");
-
-          countCards = 0;
-        }
-      }
-    }
-  });
-}
-
-function eventFire(el, etype) {
-        if (el.fireEvent) {
-          el.fireEvent("on" + etype);
-        } else {
-          var evObj = document.createEvent("Events");
-          evObj.initEvent(etype, true, false);
-          el.dispatchEvent(evObj);
-        }
-}*/
