@@ -1,8 +1,22 @@
-import App from './App.js';
+import {mixCards, countingTime, blockCards} from './main.js';
 
-describe('App', () => {
-  it('should render without crashing', () => {
-    const el = App();
-    expect(el instanceof HTMLElement).toBe(true);
+describe("Mezcla aleatoria de tarjetas", () => {
+  test("Debería ser una función", () => {
+    expect(typeof mixCards).toBe("function")
   });
-});
+
+})
+
+describe("Contador de tiempo", () => {
+  test("Debería ser una función", () => {
+    expect(typeof countingTime).toBe("function")
+  });
+
+})
+
+describe("Todas las cartas arriba", () => {
+  test("Debería ser una función", () => {
+    expect(typeof blockCards).toBe("function")
+  });
+
+})

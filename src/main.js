@@ -1,18 +1,6 @@
 //import App from "./components/App.js";
 import pokemon from "./data/pokemon/pokemon.js";
-//document.getElementById("root").appendChild(App());
 
-let countCards = 0;
-let pokemonId1 = null;
-let pokemonId2 = null;
-let cardId1 = null;
-let cardId2 = null;
-
-let flipped = 0;
-let score = 0;
-let flips = document.getElementById("flips");
-let showScore = document.getElementById("score");
-let tempo = false;
 
 const pokemon1 = pokemon.items; //console.log(pokemon1); //es la primera copia de mi arreglo
 const pokemon2 = pokemon.items; //console.log(pokemon2); //es la segunda copia de mi arreglo
@@ -47,13 +35,25 @@ for (let index = 0; index < 18; index++) {
 `;
   print.innerHTML = random;
 }
+//Variables de mis tarjetas
+let countCards = 0; //cuenta las tarjetas
+let pokemonId1 = null; //tarjeta1
+let pokemonId2 = null; //tarjeta2
+let cardId1 = null;
+let cardId2 = null;
 
-const selCards = document.getElementsByClassName("cardsContainer");
+let flipped = 0; 
+let flips = document.getElementById("flips");
+let score = 0;
+let showScore = document.getElementById("score");
+let tempo = false;
 
 let timer = 70;
 let countdownTime = null;
 let initialTime= 70;
 let time = document.getElementById("time");
+
+const selCards = document.getElementsByClassName("cardsContainer");
 
 export function countingTime(){
   countdownTime= setInterval(()=>{
@@ -61,13 +61,13 @@ export function countingTime(){
     time.innerHTML = `Tiempo: ${timer} segundos`
   if(timer ==0){
     clearInterval(countdownTime);
-    targetBlock()
+    blockCards()
   }
   },1000)
 }
 
-export function targetBlock(){
-  for(let i = 0; i <= 17; i++){
+export function blockCards(){
+  for(let i = 0; i <= 18; i++){
     let oneBlockedCard= document.getElementById(`cardsContainer${i}`);
     oneBlockedCard.className = "cardsContainer is-flipped";
   }
@@ -87,20 +87,15 @@ for (const card of selCards) {
     pokemonId1 = card; 
     cardId1= card.innerText;
     
-    
-  
-  } else {
+    } else {
   if (countCards ==2){
     card.classList.toggle("is-flipped");
     pokemonId2 = card;
     cardId2= card.innerText;
-    //console.log({cardId2})
-  flipped++;
+    flipped++;
   flips.innerHTML=  `Movimientos: ${flipped} `;
 
-  
-  
-  if (cardId1===cardId2){
+    if (cardId1===cardId2){
     countCards = 0; 
     score++;
     showScore.innerHTML=  `Aciertos: ${score} `;

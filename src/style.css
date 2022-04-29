@@ -11,7 +11,9 @@ body {
     background:#FEE440;
     font-family:'Red Hat Mono';
     color: #FF865E;
+    text-shadow: 1px -2px white;
     font-weight: bold;
+    font-size: 25px;
     align-items: center;
     }
 
@@ -69,7 +71,7 @@ height: 80px;
 
 h3{
     padding: 0;
-    font-size: 1px;
+    font-size: 0px;
     color: #FF865E;
     
 }
@@ -173,6 +175,8 @@ a{
     width: 20px;
     height: 20px;
     padding: 22px;
+    
+
 }
 .git{
     padding: 2px;
