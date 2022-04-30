@@ -1,0 +1,190 @@
+.cardP{
+    transition: all 0.8s; 
+}
+
+body {
+    /*-webkit-perspective: 1000;*/
+    /*--w: calc(70vw / 6);
+    --h: calc(70vh / 3);*/
+    padding: 0;
+    margin: 0;
+    background:#FEE440;
+    font-family:'Red Hat Mono';
+    color: #FF865E;
+    text-shadow: 1px -2px white;
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+    }
+
+#logo{
+    position: flex;
+    top: 0%;
+    padding-left: 35%;
+    width: 450px;
+    justify-content: center;
+}
+
+/*Código de las tarjetas*/
+.fatherPokeCards{
+    display: flex;
+    justify-content: center;
+    }
+
+.cardP{
+cursor: pointer;
+width: var(--w);
+height: var(--h);
+position: relative;
+perspective: 1000px;
+animation: iniciar 5s;
+}
+
+/*El lugar donde los voy a poner*/
+.pokeCards{  
+display: flex; 
+flex-wrap: wrap;
+justify-content: space-evenly;
+justify-content: center;
+margin-top: 35px;
+position: relative;
+transition: transform 1s;
+transform-style: preserve-3d;
+}
+
+.cardsContainer{
+padding: 0;
+margin:17px;
+animation: iniciar 5s;
+cursor: pointer;
+min-width: 100px;
+transform-style: preserve-3d;
+transition: all 1s linear;
+}
+
+/*Frente de la tarjeta*/
+#pokebola{ 
+position: absolute;
+width: 80px;
+height: 80px; 
+    } 
+
+h3{
+    padding: 0;
+    font-size: 0px;
+    color: #FF865E;
+    
+}
+
+.frontCard{  
+        display: flex;
+        position:absolute;
+        justify-content: center;
+        align-items: center;                  
+        width: 110px;
+        height: 110px;
+        border-radius: 20px;
+        background-color:#FF865E;
+        border: 12px solid white;
+        cursor: pointer;
+    }
+
+/*Reverso de la tarjeta: donde va el personaje*/
+.face.backCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 110px;
+        height: 110px;
+        border-radius: 20px;
+        background-color: #FEF9EF;
+        border: 12px solid #FF865E;
+        cursor: pointer;
+        transform: rotateY(180deg);
+        cursor: pointer;
+        backface-visibility: hidden;
+        }
+
+.cardsContainer.is-flipped {
+    transform: rotateY(180deg);
+        }
+
+/*Sección de los puntajes*/
+.score-flips-ng{
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: center;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+#resetGame{
+    background: #FEF9EF;
+    position: flex;
+    top: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(240, 239, 239, 0.2);
+    font-size: 20px;
+    font-family: 'Red Hat Mono', monospace;
+    font-weight: bold;
+    width: 17%;
+    height: 9%; 
+    border-radius: 30px;
+    border: solid;
+    border-color: #FF865E;
+    cursor: pointer;
+    align-items: center;
+    }
+
+#resetGame:hover{
+    background-color: cyan;
+    position: flex;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    width: 17%;
+    height: 9%;
+    align-items: center;
+}
+
+/*PIE DEL PROYECTO*//*Footer*/
+#pie{
+    display: flex;
+    position: fixed;
+    left: 17%;
+    font-size: 20px;
+    width: 100%;
+    height: 7%;
+    padding: 0;
+    
+}
+
+#firma{
+    position: relative;
+    bottom: 1px;
+    left: 20%;
+}
+
+a{
+    text-decoration: none;
+    color: #FF865E;
+}
+
+.github{
+    width: 20px;
+    height: 20px;
+    padding: 22px;
+    
+
+}
+.git{
+    padding: 2px;
+    display: flex;
+    margin: 5px;
+    margin-left: 15px;
+    position: relative;
+    bottom: 9px;
+    left: 20%;
+}
+
