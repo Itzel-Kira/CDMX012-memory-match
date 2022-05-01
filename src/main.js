@@ -67,8 +67,8 @@ export function countingTime(){
 
 export function blockCards(){
   for(let i = 0; i <= 18; i++){
-    let oneBlockedCard= document.getElementById(`cardsContainer${i}`);
-    oneBlockedCard.className = "cardsContainer is-flipped";
+    let blockedCard= document.getElementById(`cardsContainer${i}`);
+    blockedCard.className = "cardsContainer is-flipped";
   }
 }
 
@@ -110,24 +110,13 @@ for (const card of selCards) {
   } else {
     
     setTimeout(() => { pokemonId1.classList.toggle("is-flipped"), 
-        pokemonId2.classList.toggle("is-flipped");}, 1300);
+        pokemonId2.classList.toggle("is-flipped");}, 1000);
         countCards = 0;   
       }
     }
   } 
 }
 )}
-
-/*<div id="${index}" class="face backCard">
-                        <img id="pokemon3${index}" src="${
-    pokemon3[index].image
-  }" alt="${pokemon3[index].id}" />
-        </div>*/
-
-
-
-
-
 
 
 
