@@ -1,7 +1,6 @@
 //import App from "./components/App.js";
 import pokemon from "./data/pokemon/pokemon.js";
 
-
 const pokemon1 = pokemon.items; //console.log(pokemon1); //es la primera copia de mi arreglo
 const pokemon2 = pokemon.items; //console.log(pokemon2); //es la segunda copia de mi arreglo
 const pokemon3 = pokemon1.concat(pokemon2); //console.log(pokemon3); //pokemon3 es mi arreglo "duplicado" y unido pero no mezclado

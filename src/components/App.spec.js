@@ -1,4 +1,4 @@
-import {mixCards, countingTime, blockCards} from './main.js';
+import {mixCards, countingTime, blockCards} from './App.js';
 
 describe("Mezcla aleatoria de tarjetas", () => {
   test("Debería ser una función", () => {
